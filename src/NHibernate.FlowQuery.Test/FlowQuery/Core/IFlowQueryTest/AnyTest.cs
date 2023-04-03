@@ -5,6 +5,7 @@
     using NHibernate.Criterion;
     using NHibernate.Engine;
     using NHibernate.FlowQuery.Core;
+    using NHibernate.FlowQuery.ExtensionHelpers;
     using NHibernate.FlowQuery.Test.Setup.Entities;
 
     using NUnit.Framework;
@@ -69,7 +70,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 
@@ -91,7 +92,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 
@@ -110,7 +111,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 
@@ -131,7 +132,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 
@@ -149,7 +150,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 
@@ -167,7 +168,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(1));
 

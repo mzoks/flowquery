@@ -35,6 +35,7 @@
         /// <summary>
         ///     Initializes static members of the <see cref="FlowQueryHelper" /> class.
         /// </summary>
+        [Obsolete]
         static FlowQueryHelper()
         {
             ExpressionHandlerLock = new object();
@@ -120,19 +121,21 @@
         /// </returns>
         public static IEnumerable<IExpressionHandler> GetExpressionHandlers(ExpressionType expressionType)
         {
-            HashSet<IExpressionHandler> handlers;
+            var handlers = new List<IExpressionHandler>();
 
-            if (CustomExpressionHandlers.TryGetValue(expressionType, out handlers))
+            HashSet<IExpressionHandler> temp;
+
+            if (CustomExpressionHandlers.TryGetValue(expressionType, out temp))
             {
-                return handlers;
+                handlers.AddRange(temp);
             }
 
-            if (DefaultExpressionHandlers.TryGetValue(expressionType, out handlers))
+            if (DefaultExpressionHandlers.TryGetValue(expressionType, out temp))
             {
-                return handlers;
+                handlers.AddRange(temp);
             }
 
-            return new HashSet<IExpressionHandler>();
+            return handlers;
         }
 
         // TODO: Add usage scenario documentation for FlowQueryHelper.Project(..)

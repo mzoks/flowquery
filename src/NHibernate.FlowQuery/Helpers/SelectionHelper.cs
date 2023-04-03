@@ -73,9 +73,20 @@
                     );
             }
 
-            IEnumerable<TDestination> selection = query.IsDelayed
-                ? criteria.Future<TDestination>()
-                : criteria.List<TDestination>();
+            //IEnumerable<TDestination> selection = query.IsDelayed
+            //    ? criteria.Future<TDestination>()
+            //    : criteria.List<TDestination>();
+
+            IEnumerable<TDestination> selection;
+
+            if (query.IsDelayed)
+            {
+                selection = criteria.Future<TDestination>();
+            }
+            else
+            {
+                selection = criteria.List<TDestination>();
+            }
 
             // ReSharper disable once PossibleMultipleEnumeration
             return new FlowQuerySelection<TDestination>(() => selection);

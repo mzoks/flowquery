@@ -5,6 +5,7 @@
 
     using NHibernate.Engine;
     using NHibernate.FlowQuery.Core;
+    using NHibernate.FlowQuery.ExtensionHelpers;
     using NHibernate.FlowQuery.Test.Setup.Entities;
 
     using NUnit.Framework;
@@ -31,7 +32,7 @@
 
             int queryCount = 0;
 
-            Assert.That(() => queryCount = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => queryCount = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(queryCount, Is.EqualTo(2));
 

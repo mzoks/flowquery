@@ -8,6 +8,7 @@
 
     using NHibernate.Engine;
     using NHibernate.FlowQuery.Core;
+    using NHibernate.FlowQuery.ExtensionHelpers;
     using NHibernate.FlowQuery.Test.FlowQuery.Core.IFlowQueryTest.Mappers;
     using NHibernate.FlowQuery.Test.Setup.Dtos;
     using NHibernate.FlowQuery.Test.Setup.Entities;
@@ -37,8 +38,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
-
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
             Assert.That(count, Is.EqualTo(2));
             Assert.That(userCount.Value, Is.EqualTo(4));
 
@@ -67,7 +67,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
 
@@ -103,7 +103,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
 
@@ -126,7 +126,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
 
@@ -151,7 +151,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
 
@@ -174,7 +174,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
 
@@ -201,7 +201,7 @@
 
             int count = 0;
 
-            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Results.Count, Throws.Nothing);
+            Assert.That(() => count = sessionImpl.FutureCriteriaBatch.Count(), Throws.Nothing);
 
             Assert.That(count, Is.EqualTo(2));
         }
