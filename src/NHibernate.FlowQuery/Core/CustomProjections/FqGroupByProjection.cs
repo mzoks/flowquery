@@ -113,9 +113,6 @@
         /// <param name="criteriaQuery">
         ///     The criteria query.
         /// </param>
-        /// <param name="enabledFilters">
-        ///     The enabled filters.
-        /// </param>
         /// <returns>
         ///     The rendered SQL Fragment.
         /// </returns>
@@ -123,13 +120,13 @@
             (
             ICriteria criteria, 
             int position, 
-            ICriteriaQuery criteriaQuery, 
-            IDictionary<string, IFilter> enabledFilters
+            ICriteriaQuery criteriaQuery
+            //, IDictionary<string, IFilter> enabledFilters // Not exist in NHibernate 5.1.1
             )
         {
             if (_includeInSelectList)
             {
-                return base.ToSqlString(criteria, position, criteriaQuery, enabledFilters);
+                return base.ToSqlString(criteria, position, criteriaQuery/*, enabledFilters*/);
             }
 
             return new SqlString(string.Empty);

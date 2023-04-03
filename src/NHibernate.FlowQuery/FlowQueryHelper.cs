@@ -35,6 +35,7 @@
         /// <summary>
         ///     Initializes static members of the <see cref="FlowQueryHelper" /> class.
         /// </summary>
+        [Obsolete]
         static FlowQueryHelper()
         {
             ExpressionHandlerLock = new object();

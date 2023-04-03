@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <!--<id>$id$</id>-->
+        <id>FlowQueryNHibernate</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>$author$</authors>
+        <owners>$author$</owners>
+        <projectUrl>http://nhflowquery.wordpress.com/</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>$description$</description>
+        <summary>$description$</summary>
+        <language>en-US</language>
+        <copyright>Copyright © $author$ 2010-2023</copyright>
+        <tags>nhibernate flowquery icriteria criteria queryover fq nh</tags>
+        <license type="file">.\License.txt</license>
+        <readme>.\Readme.md</readme>
+    </metadata>
+    <files>
+        <!--<file src="bin\Release\NHibernate.FlowQuery.pdb" target="lib\Net461" />-->
+        <file src="bin\Release\NHibernate.FlowQuery.pdb" target="lib\Net472" />
+        <!--<file src="bin\Release\NHibernate.FlowQuery.pdb" target="lib\Net48" />-->
+        <file src="bin\Release\ReleaseNotes.txt" />
+        <file src="bin\Release\License.txt" />
+        <file src="bin\Release\Readme.md" />
+    </files>
+</package>
